@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+    <style>
+        *{
+    margin:0;
+    padding:0;
+}
+.top
+{
+    background-color: #4B1D1D;
+    height: 10vh;
+}
+.middle
+{
+    background-color: purple;
+    height: 60vh;
+}
+.bottom
+{
+    background-color: #4B1D1D;
+    height: 30vh;
+}
+    body{
+        background-color: blueviolet;
+    }
+    .header {
+  padding: 60px;
+  text-align: center;
+  background: chocolate;
+  color: white;
+  font-size: 30px;
+}
+#cake{
+    border-radius: 100%;
+    background-color: black;
+    margin-left: 650px;
+    /* margin-bottom: 1000px; */
+    position: absolute;
+    bottom: 570px;
+    border: 10px solid black;
+
+}
+.centered {
+  position: absolute;
+  
+  left: 747px;
+  transform: translate(-50%, -50%);
+  bottom: 570px;
+  color: aliceblue;
+  font-style: bold;
+}
+.cake_list{
+    position: absolute;
+    top:300px;
+    left:200px;
+    color: aliceblue;
+}
+.tem{
+    position: absolute;
+    top:200px;
+    left:150px;
+}
+.list-heading
+{
+    position: absolute;
+    left: 1200px;
+    top:5px;
+    bottom: 370px;
+    color: aliceblue;
+}
+.list-r
+{
+    padding-top: 15px;
+    padding-left: 1100px;
+}
+.btn
+{
+    background-color:chocolate;
+    margin: 60px;
+    border-color: white;
+    color: white;
+    /* position: absolute;
+    bottom: 100px; */
+    /* left:100px; */
+}
+#layer1{
+    width: 240px;
+    height: 40px;
+    border-radius: 20%;
+    visibility: hidden;
+}
+
+#layer2{
+    width: 200px;
+    margin-left: 20px;
+    height: 35px;
+    border-radius: 20%;
+    visibility: hidden;
+}
+
+#layer3{
+    width: 160px;
+    height: 35px;
+    margin-left: 40px;
+    border-radius: 20%;
+    visibility: hidden;
+}
+
+#layer4{
+    width: 120px;
+    margin-left: 60px;
+    height: 35px;
+    border-radius: 20%;
+    visibility: hidden;
+}
+
+#layer5{
+    width: 80px;
+    margin-left: 80px ;
+    height: 35px;
+    border-radius: 20%;
+    visibility: hidden;
+}
+.bill-list{
+    position: relative;
+    bottom: 250px;
+    left: 10px;
+    text-align: center;
+    white-space: pre-line;
+}
+.bill-list li
+{
+    position: absolute;
+    left:1100px;
+    list-style: none;
+    color: white;
+    font-family: cursive;
+line-break: strict;
+}
+.bill-list p
+{
+    color: white;
+    text-transform: uppercase;
+    font-size: 20px;
+    font-family: 'Times New Roman', Times, serif;
+}
+#countLayer{
+    position: absolute;
+    left:800px;
+}
+
+    </style>
+</head>
+<body class="background">
+    <div class="header">
+      
+      </div>
+    <div id="i"> <img id="cake"src="cake.png"><div class="centered">Cake World</div></div>
+    <div class="cake_list">
+        <div class="choco">chocolate--------300</div>
+        <div class="starw">Stawberry--------100</div>
+        <div class="choco">ButterScotch--------200</div>
+        <div class="choco">Vannila--------250</div>
+        <div class="choco">RedVelvet--------350</div>
+
+    </div>
+    <img class="tem" src="list_template.png">
+    <div class=" col col-sm cake mt-auto">
+        <div class="container-flex">
+            <div class="row">
+                <div class="col"></div>
+                <div class="col">
+                   <img id="candle" src="candle.png" alt="candle " width="50" height="50" >
+                    <div id="layer5"></div>
+                    <div id="layer4"></div>
+                    <div id="layer3"></div>
+                    <div id="layer2"></div>
+                    <div id="layer1"></div>
+
+                </div>
+                <div class="col"></div>
+            </div>
+        
+            </div>
+        
+        </div>
+        <div class="col-sm-col-bill">
+            <img class="list-r" src="list_template.png" alt="list">
+            
+            <ul class="bill-list" id="bill-total">
+                <p class="list-heading">Bill</p>
+                <!-- <li id="chocolate-li" style="visibility: hidden;">Chocolate----------300</li>
+                <li id="strawbery" style="visibility: hidden;">Strawbery----------100</li>
+                <li id="butterscotch" style="visibility: hidden;">Butter Scotch-----200</li>
+                <li id="vanilla" style="visibility: hidden;">Vanilla--------------200</li>
+                <li id="redvelvet" style="visibility: hidden;">Redvelvet----------500</li> -->
+            </ul>
+        </div>
+        
+    </div>
+    <div class="row">
+        <div class="bottom col col-sm-12">
+            <a class="btn" id="choc">Chocolate</a>
+            <a class="btn" id="straw">Strawbery</a>
+            <a class="btn" id="butt">Butter Scotch</a>
+            <a class="btn" id="vani">Vanilla</a>
+            <a class="btn" id="redv">Redvelvet</a>
+            <a class="btn" id="buy">Buy</a>
+        </div>
+      </div>
+       
+
+    </div>
+</body >
+<script >
+    var chocolate = document.getElementById("choc");
+var strawbery = document.getElementById("straw");
+var butter = document.getElementById("butt");
+var vanilla = document.getElementById("vani");
+var rev = document.getElementById("redv");
+var buy = document.getElementById("buy");
+var count = 1;
+
+var ul = document.getElementById('bill-total');
+var total = 0;
+
+chocolate.addEventListener("click", ()=> {
+    let countLayer = "layer"+count;
+    let a = document.getElementById(countLayer);
+    a.style.visibility = "visible";
+    a.style.background = "brown";
+    var li = document.createElement('li');
+    var text = document.createTextNode('\nChocolate-----------300\n');
+    li.appendChild(text);
+    ul.appendChild(li);
+
+    if(count==5)
+    document.getElementById("candle").style.visibility = "visible";
+
+    total+=300;
+
+    count++;
+})
+strawbery.addEventListener("click", function () {
+    let countLayer = "layer"+count;
+    let a = document.getElementById(countLayer);
+    a.style.visibility = "visible";
+    a.style.background = "#fc5a8d";
+    var li = document.createElement('li');
+    var text = document.createTextNode('\nStrawbery----------100\n');
+    li.appendChild(text);
+    ul.appendChild(li);
+
+    if(count==5)
+    document.getElementById("candle").style.visibility = "visible";
+
+    total+=100;
+
+    count++;
+
+  
+   
+})
+butter.addEventListener("click", function () {
+    let countLayer = "layer"+count;
+    let a = document.getElementById(countLayer);
+    a.style.visibility = "visible";
+    a.style.background = "#FF5733";
+    var li = document.createElement('li');
+    var text = document.createTextNode('\nButter Scotch------200\n');
+    li.appendChild(text);
+    ul.appendChild(li);
+    
+    if(count==5)
+    document.getElementById("candle").style.visibility = "visible";
+
+    total+=200;
+
+    count++;
+})
+
+vanilla.addEventListener("click", function () {
+    let countLayer = "layer"+count;
+    let a = document.getElementById(countLayer);
+    a.style.visibility = "visible";
+    a.style.background = "#F3E5AB";
+    var li = document.createElement('li');
+    var text = document.createTextNode('\nVanilla---------------200\n');
+    li.appendChild(text);
+    ul.appendChild(li);
+    
+    if(count==5)
+    document.getElementById("candle").style.visibility = "visible";
+
+    total+=200;
+
+    count++;
+})
+rev.addEventListener("click", function () {
+    let countLayer = "layer"+count;
+    let a = document.getElementById(countLayer);
+    a.style.visibility = "visible";
+    a.style.background = "#7F2A3C";
+    var li = document.createElement('li');
+    var text = document.createTextNode('\nRedvelvet-----------500\n');
+    li.appendChild(text);
+    ul.appendChild(li);
+
+    if(count==5)
+    document.getElementById("candle").style.visibility = "visible";
+
+    total+=500;
+
+    count++;
+})
+
+buy.addEventListener('click', () =>{
+    if(count==6){
+    let liOne = document.createElement('li');
+    let textOne = document.createTextNode('--------------------');
+    liOne.appendChild(textOne);
+    let liTwo = document.createElement('li');
+    let textTwo = document.createTextNode('Total ----------'+total);
+    liTwo.appendChild(textTwo);
+    ul.appendChild(liOne);
+    ul.appendChild(liTwo);
+    count++;
+    }
+})
+
+</script>
+</html>
